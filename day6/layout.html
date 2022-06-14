@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Layout</title>
     <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        .bordered{
-            border: 4px solid red;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .fullw{
-            height: 100px;
-            width: 100%;
-        }
-        .ninety{
-            width: 80%;
-        }
-        .sides{
-            flex: 1;
-            height: 300px;
-        }
-        .middle{
-            flex: 4;
-            height: 300px;
-        }
-        .left{
-            margin-right: 12px;
-        }
-        .right{
-            margin-left: 12px;
-        }
-        .pushed{
-            margin-top: 12px;
-            margin-bottom: 12px;
-        }
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .bordered {
+        border: 4px solid red;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .fullw {
+        height: 100px;
+        width: 100%;
+      }
+      .ninety {
+        width: 80%;
+      }
+      .sides {
+        flex: 1;
+        height: 275px;
+      }
+      .middle {
+        flex: 4;
+        height: 275px;
+      }
+      .left {
+        margin-right: 12px;
+      }
+      .right {
+        margin-left: 12px;
+      }
+      .pushed {
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
     </style>
-</head>
-<body>
-    <br>
+  </head>
+  <body>
+    <br />
     <div class="container">
-        <div class="container ninety">
-            <div class="fullw bordered"></div>
-        </div>    
+      <div class="container ninety">
+        <div class="fullw bordered"></div>
+      </div>
     </div>
     <div class="container pushed">
-        <div class="container ninety">
-            <div class="sides left bordered"></div>
-            <div class="middle bordered"></div>
-            <div class="sides right bordered"></div>
-        </div>      
+      <div class="container ninety">
+        <div class="sides left bordered"></div>
+        <div class="middle bordered"></div>
+        <div class="sides right bordered"></div>
+      </div>
     </div>
     <div class="container">
-        <div class="container ninety">
-            <div class="fullw bordered"></div>
-        </div>    
+      <div class="container ninety">
+        <div class="fullw bordered"></div>
+      </div>
     </div>
-    <br>
-</body>
+    <br />
+  </body>
 </html>
