@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+    <style>
+        *{
+            color: white;
+        }
+        button{
+            background-color: blue;
+            font-size: 2rem;
+            padding: 1rem;
+        }
+        html{
+            background-image: url(https://c.tenor.com/lmb2VQF9JcwAAAAM/bee-dance.gif);
+            display: flex;
+        }
+        h1{
+            background-color: rgba(0,0,0,0.4);
+        }
+        #result{
+            background-color: rgba(0,0,0,0.4);
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the button below... if you dare...</h1>
+    <button onclick="bee();">Click me if you dare</button>
+    <br><br><br>
+    <div id="result"></div>
+    <script src="bee.js"></script>
+    <script>
+        let out = document.querySelector('#result');
+        let counter = 0;
+        let bee = () => {
+            setInterval(()=>{
+                result.innerHTML += `${script[counter]} &nbsp;`;
+                counter+=1;
+            }, 150);
+        }
+    </script>
+
+</body>
+</html>
