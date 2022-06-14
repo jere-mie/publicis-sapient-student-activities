@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout in CSS Grid</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-areas:
+            "head head head head head head"
+            "left midd midd midd midd right"
+            "tail tail tail tail tail tail"
+            ;
+            grid-gap: 12px;
+        }
+        .head{
+            grid-area: head;
+            height: 75px;
+        }
+        .left{
+            grid-area: left;
+            height: 200px;
+        }
+        .midd{
+            grid-area: midd;
+        }
+        .tail{
+            grid-area: tail;
+            height: 75px;
+        }
+        .elem{
+            border: 4px solid red;
+            padding: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="head elem"></div>
+        <div class="left elem"></div>
+        <div class="midd elem"></div>
+        <div class="right elem"></div>
+        <div class="tail elem"></div>
+    </div>
+</body>
+</html>
