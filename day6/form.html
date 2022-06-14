@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+    <style>
+      table {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Here is an example of a form</h1>
+    <form action="">
+      <table>
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" name="name" id="name" />
+          </td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td>
+            <input type="number" name="age" id="age" />
+          </td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td>
+            <input type="password" name="password" id="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" id="genderm" value="male" />
+            <label for="gender">Male</label>
+            <input type="radio" name="gender" id="genderf" value="female" />
+            <label for="gender">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Skills</td>
+          <td>
+            <input type="checkbox" name="clang" id="clang" />
+            <label for="clang">C</label>
+            <input type="checkbox" name="js" id="js" />
+            <label for="js">JS</label>
+            <input type="checkbox" name="java" id="java" />
+            <label for="java">Java</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Qualifications</td>
+          <td>
+            <select name="qualifications" id="qualifications">
+              <option value="NA">N/A</option>
+              <option value="highschool">Highschool</option>
+              <option value="diploma">Diploma</option>
+              <option value="bachelor">Bachelor Degree</option>
+              <option value="master">Masters Degree</option>
+              <option value="phd">PHD</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td>
+            <input type="date" name="birthdate" id="birthdate" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="reset" value="Reset" />
+          </td>
+          <td>
+            <input type="submit" value="Sign Up" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
