@@ -27,7 +27,7 @@
 
     <script>
       let ctx = document.getElementById("c1").getContext("2d");
-
+      let stopped = true;
       let colours = [
         "red",
         "orange",
@@ -57,13 +57,17 @@
       };
 
       let cycle = () => {
-        setInterval(() => {
+        stopped = !stopped;
+      };
+
+      setInterval(() => {
+        if (!stopped) {
           let out = colours.slice(1);
           out.push(colours[0]);
           colours = out;
           draw();
-        }, 150);
-      };
+        }
+      }, 150);
 
       draw();
     </script>
