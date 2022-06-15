@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 3 - Canvas</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Checkerboard</h1>
+    <div class="container">
+      <canvas id="c1" width="400" height="400"></canvas>
+    </div>
+
+    <script>
+      let ctx = document.getElementById("c1").getContext("2d");
+
+      for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+          if ((i + j) % 2 != 0) {
+            console.log(`i=>${i}, j=>${j}`);
+            ctx.fillRect(j * 50, i * 50, 50, 50);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+    <style>
+      table {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Here is an example of a form with validation</h1>
+    <form action="" name="login" onsubmit="return handleSubmit();">
+      <table>
+        <tr>
+          <td>First Name</td>
+          <td>
+            <input type="text" name="fname" id="fname" />
+          </td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td>
+            <input type="text" name="lname" id="lname" />
+          </td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" id="genderm" value="male" />
+            <label for="gender">Male</label>
+            <input type="radio" name="gender" id="genderf" value="female" />
+            <label for="gender">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td>
+            <input type="password" name="password" id="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Confirm Password</td>
+          <td>
+            <input type="password" name="cpassword" id="cpassword" />
+          </td>
+        </tr>
+        <tr>
+          <td>Skills</td>
+          <td>
+            <input type="checkbox" name="skills" id="clang" />
+            <label for="clang">C</label>
+            <input type="checkbox" name="skills" id="js" />
+            <label for="js">JS</label>
+            <input type="checkbox" name="skills" id="java" />
+            <label for="java">Java</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="reset" value="Reset" />
+          </td>
+          <td>
+            <input type="submit" value="Sign Up" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      const handleSubmit = () => {
+        const login = document.login;
+        if(login.fname.value.length < 3){ alert("First name is too short"); return false; }
+        if(login.lname.value.length < 2){ alert("Last name is too short"); return false; }
+        if(!login.gender.value){ alert("Gender not selected"); return false; }
+        if(!(login.password.value == login.cpassword.value)){ alert("Passwords must match"); return false; }
+        if(!(login.skills[0].checked || login.skills[1].checked || login.skills[2].checked)){alert("You must have at least one skill"); return false;}
+        alert("success!")
+        return true;
+      }
+    </script>
+
+  </body>
+</html>
