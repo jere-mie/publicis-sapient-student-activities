@@ -25,12 +25,12 @@
     <script>
       let ctx = document.getElementById("c1").getContext("2d");
 
-      let colours = ["red", "orange", "yellow", "green", "blue", "purple", "white"];
+      let colours = ["red", "orange", "yellow", "green", "blue", "indigo", "purple", "white"];
 
-      for(let i=0; i<7; i++){
+      for(let i=0; i<8; i++){
         ctx.fillStyle = colours[i];
         ctx.beginPath();
-        ctx.arc(200, 300, 196-(28*i), 0, Math.PI, true);
+        ctx.arc(200, 300, 196-(20*i), 0, Math.PI, true);
         ctx.fill();
       }
     </script>
