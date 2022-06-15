@@ -17,7 +17,10 @@
     </style>
   </head>
   <body>
-    <h1 style="text-align: center;">Rainbow</h1>
+    <h1 style="text-align: center">
+      Rainbow <br /><button onclick="randomize();">Randomize Colours</button>
+      <br /><button onclick="cycle();">Cycle Colours</button>
+    </h1>
     <div class="container">
       <canvas id="c1" width="400" height="400"></canvas>
     </div>
@@ -25,14 +28,44 @@
     <script>
       let ctx = document.getElementById("c1").getContext("2d");
 
-      let colours = ["red", "orange", "yellow", "green", "blue", "indigo", "purple", "white"];
+      let colours = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "indigo",
+        "purple",
+        "white",
+      ];
 
-      for(let i=0; i<colours.length; i++){
-        ctx.fillStyle = colours[i];
-        ctx.beginPath();
-        ctx.arc(200, 300, 196-(20*i), 0, Math.PI, true);
-        ctx.fill();
-      }
+      let draw = () => {
+        for (let i = 0; i < colours.length; i++) {
+          ctx.fillStyle = colours[i];
+          ctx.beginPath();
+          ctx.arc(200, 300, 196 - 20 * i, 0, Math.PI, true);
+          ctx.fill();
+        }
+      };
+
+      let randomize = () => {
+        colours = colours
+          .map((value) => ({ value, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ value }) => value);
+        draw();
+      };
+
+      let cycle = () => {
+        setInterval(() => {
+          let out = colours.slice(1);
+          out.push(colours[0]);
+          colours = out;
+          draw();
+        }, 150);
+      };
+
+      draw();
     </script>
   </body>
 </html>
