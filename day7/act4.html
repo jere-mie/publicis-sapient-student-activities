@@ -70,7 +70,7 @@
         if (!stopped) {
           let out = colours.slice(1, 7);
           out.push(colours[0]);
-          out.push('white');
+          out.push(colours[colours.length-1]);
           colours = out;
           draw();
         }
