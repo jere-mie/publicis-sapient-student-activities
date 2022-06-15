@@ -38,9 +38,11 @@
         let counter = 0;
         let bee = () => {
             setInterval(()=>{
-                result.innerHTML += `${script[counter]} &nbsp;`;
-                counter+=1;
-                window.scrollTo(0, document.body.scrollHeight);
+                if(counter < script.length){
+                    result.innerHTML += `${script[counter]} &nbsp;`;
+                    counter+=1;
+                    window.scrollTo(0, document.body.scrollHeight);
+                }
             }, 150);
         }
     </script>
