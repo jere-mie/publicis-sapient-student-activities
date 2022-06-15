@@ -68,8 +68,9 @@
 
       setInterval(() => {
         if (!stopped) {
-          let out = colours.slice(1);
+          let out = colours.slice(1, 7);
           out.push(colours[0]);
+          out.push('white');
           colours = out;
           draw();
         }
