@@ -36,7 +36,6 @@
         "blue",
         "indigo",
         "purple",
-        "white",
       ];
 
       let draw = () => {
@@ -46,6 +45,11 @@
           ctx.arc(200, 300, 196 - 20 * i, 0, Math.PI, true);
           ctx.fill();
         }
+          ctx.fillStyle = 'white';
+          ctx.beginPath();
+          ctx.arc(200, 300, 196 - 20 * 7, 0, Math.PI, true);
+          ctx.fill();
+
       };
 
       let randomize = () => {
@@ -70,7 +74,6 @@
         if (!stopped) {
           let out = colours.slice(1, 7);
           out.push(colours[0]);
-          out.push(colours[colours.length-1]);
           colours = out;
           draw();
         }
