@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 1 - React Table</title>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const UserTable = () => {
+        let users = [
+          { name: "Jeremie", age: 21, gender: "Male" },
+          { name: "Justin", age: 19, gender: "Male" },
+          { name: "Kimberly", age: 44, gender: "Female" },
+          { name: "Joshua", age: 23, gender: "Male" },
+          { name: "Anna", age: 28, gender: "Female" },
+        ];
+        return (
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+            </tr>
+            {users.map((user) => (
+              <tr>
+                <td>{user.name}</td>
+                <td>{user.age}</td>
+                <td>{user.gender}</td>
+              </tr>
+            ))}
+          </table>
+        );
+      };
+      function App() {
+        return (
+          <div>
+            <h1>Rendering a Table in React</h1>
+            <UserTable />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
