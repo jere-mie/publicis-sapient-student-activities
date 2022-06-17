@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bee Movie Clicker</title>
+    <style>
+      * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .center {
+        text-align: center;
+      }
+      .fcont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #beeText {
+        background-color: yellow;
+        padding: 12px;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center">Bee Movie Clicker</h1>
+    <h2 class="center">Bees Killed: <span id="bees">0</span></h2>
+    <h1 class="center"><span id="beeText">According</span></h1>
+    <div class="fcont">
+      <img
+        id="bee"
+        onclick="clickBee();"
+        src="https://i.gifer.com/origin/9d/9db184c600f510b665f99a864720400f_w200.gif"
+        alt="bee image"
+        width="300"
+        height="300"
+      />
+    </div>
+    <script src="static/bee.js"></script>
+    <script src="static/mousetrap.min.js"></script>
+    <script>
+      let bees = -1;
+      let speech = new SpeechSynthesisUtterance();
+      speech.lang = "en";
+      speech.rate = 7;
+
+      const $ = (q) => {
+        return document.querySelector(q);
+      };
+      const bee = $("#bee");
+
+      const clickBee = () => {
+        bees++;
+        speech.text = script[bees];
+        if(window.speechSynthesis.speaking){
+          window.speechSynthesis.cancel();
+        }
+        window.speechSynthesis.speak(speech);
+        $("#beeText").innerText = script[bees];
+        $("#bees").innerText = bees + 1;
+        bee.width++;
+        bee.height++;
+        if (bee.width == 325) {
+          bee.width = 300;
+          bee.height = 300;
+        }
+      };
+      Mousetrap.bind("space", (e) => {
+          clickBee();
+          return false;
+        });
+    </script>
+  </body>
+</html>
