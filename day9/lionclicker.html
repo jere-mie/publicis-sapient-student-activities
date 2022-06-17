@@ -27,7 +27,7 @@
 </head>
 <body>
     
-    <h1 class="center">Lion Clicker</h1>
+    <h1 class="center">Lion Clicker &nbsp; &nbsp; Level <span id="level">0</span></h1>
     <h2 class="center">Money: $<span id="money">0</span></h2>
     <p class="center">
         <button id="upgradebtn" onclick="upgrade();" disabled>Upgrade for $<span id="cost">100</span></button>
@@ -42,6 +42,7 @@
     let addend = 1;
     let cost = 100;
     let autocost = cost*2;
+    let level = 0;
     const $ = (q) => {return document.querySelector(q)};
     const lion = $("#lion");
     const clickLion = () => {
@@ -63,9 +64,11 @@
     const upgrade = () => {
         money -= cost;
         addend++;
+        level++;
         cost = Math.floor(cost * 1.3);
         $("#cost").innerText = cost;
         $("#money").innerText = money;
+        $("#level").innerText = level;
         if(cost > money){
             $("#upgradebtn").disabled = true;
         }
