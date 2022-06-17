@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion Clicker</title>
+    <style>
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .center{
+            text-align: center;
+        }
+        .fcont{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #upgradebtn, #autobtn{
+            background-color: aquamarine;
+            padding: 12px;
+            font-size: 1.5rem;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="center">Lion Clicker</h1>
+    <h2 class="center">Money: $<span id="money">0</span></h2>
+    <p class="center">
+        <button id="upgradebtn" onclick="upgrade();" disabled>Upgrade for $<span id="cost">100</span></button>
+        <button id="autobtn" onclick="autoclick();" disabled>Upgrade Autoclick for $<span id="autocost">200</span></button>
+    </p>
+    <div class="fcont">
+        <img id="lion" onclick="clickLion();" src="img/lion.png" alt="lion image" width="300" height="300">
+    </div>
+
+<script>
+    let money = 0;
+    let addend = 1;
+    let cost = 100;
+    let autocost = cost*2;
+    const $ = (q) => {return document.querySelector(q)};
+    const lion = $("#lion");
+    const clickLion = () => {
+        money+=addend;
+        $("#money").innerText = money;
+        lion.width++;
+        lion.height++;
+        if(lion.width == 325){
+            lion.width = 300;
+            lion.height = 300;
+        }
+        if(money >= cost){
+            $("#upgradebtn").disabled = false;
+        }
+        if(money >= autocost){
+            $("#autobtn").disabled = false;
+        }
+    }
+    const upgrade = () => {
+        money -= cost;
+        addend++;
+        cost = Math.floor(cost * 1.3);
+        $("#cost").innerText = cost;
+        $("#money").innerText = money;
+        if(cost > money){
+            $("#upgradebtn").disabled = true;
+        }
+        if(autocost > money){
+            $("#autobtn").disabled = true;
+        }
+    }
+    const autoclick = () => {        
+        let id = setInterval(()=>{
+            lion.click();
+        }, 50);
+        setTimeout(()=>{clearInterval(id)}, 5010);
+        money -= autocost;
+        autocost = cost*2;
+        $("#autocost").innerText = autocost;
+        $("#money").innerText = money;
+        if(cost > money){
+            $("#upgradebtn").disabled = true;
+        }
+        if(autocost > money){
+            $("#autobtn").disabled = true;
+        }
+
+    }
+</script>
+</body>
+</html>
