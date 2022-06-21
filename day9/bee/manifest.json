@@ -1,6 +1,6 @@
 {
-    "name":"",
-    "short_name":"",
+    "name":"Bee Clicker",
+    "short_name":"beeclicker",
     "start_url":"/?home=true",
     "icons": [
         {
