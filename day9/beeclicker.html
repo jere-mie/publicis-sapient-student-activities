@@ -25,6 +25,7 @@
         font-size: 2rem;
       }
     </style>
+    <link rel="manifest" href="bee/manifest.json">
   </head>
   <body>
     <h1 class="center">Bee Movie Clicker</h1>
@@ -40,8 +41,8 @@
         height="300"
       />
     </div>
-    <script src="static/bee.js"></script>
-    <script src="static/mousetrap.min.js"></script>
+    <script src="bee/bee.js"></script>
+    <script src="bee/mousetrap.min.js"></script>
     <script>
       let bees = -1;
       let speech = new SpeechSynthesisUtterance();
@@ -73,6 +74,11 @@
           clickBee();
           return false;
         });
+    </script>
+    <script>
+      if('serviceworker' in navigator){
+        navigator.serviceWorker.register('/bee/service-worker.js')
+      }
     </script>
   </body>
 </html>
