@@ -1,7 +1,7 @@
 {
     "name":"Bee Clicker",
     "short_name":"beeclicker",
-    "start_url":"https://ps.gh.bornais.ca/day9/beeclicker",
+    "start_url":"/beeclicker",
     "icons": [
         {
           "src": "icons/manifest-icon-192.maskable.png",
