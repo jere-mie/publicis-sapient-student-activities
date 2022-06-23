@@ -8,3 +8,4 @@ Welcome to my PS Training Repo 😎
 - [day 9 materials](https://jere-mie.github.io/publicis-sapient-student-activities/day9)
 - [day 10 materials](https://jere-mie.github.io/publicis-sapient-student-activities/day10)
 - [day 11 materials](https://jere-mie.github.io/publicis-sapient-student-activities/day11)
+- [day 12 materials](https://jere-mie.github.io/publicis-sapient-student-activities/day12)
